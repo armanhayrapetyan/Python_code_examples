@@ -86,28 +86,6 @@ p = get_res()
 print(list(p))
 
 
-
-# 192   #4
-
-def solution(N,K):
-    i = 0
-    while i>3 and k>0:
-        N_str = str(N)
-        tmp = N_str[0]
-        if tmp == 9:
-            i+=1
-        else:
-                new_N_str = N_str[:i] + str(tmp+1)+N_str[i+1:]
-                if int(new_N_str) >n:
-                    N = int(new_N_str)
-                    K-=1
-
-    return N
-
-p = solution(192,4)
-print(p)
-
-
 data = [3,2,0,1,5,4,9,7]
 #data.sort()
 
@@ -176,9 +154,9 @@ import math
 
 
 data = [7,5,10,24,9,7,5]
-# 10 24 7 5 9 7 5 
+# 10 24 7 5 9 7 5
 data.sort(key=lambda a : a%2 ==0,reverse=True)
-print(data)  
+print(data)
 
 data = [6,2,1,1,5,1,1,4]
 
@@ -190,7 +168,7 @@ from statistics import mode
 
 rs = mode(data)
 ls= data.count(rs)
-print(rs,ls) 
+print(rs,ls)
 
 
 data = [6,5,8,9,10,25,65,3,11,13]
@@ -219,7 +197,7 @@ def adf():
     #print("===============================")
     adf()
 
-adf()   
+adf()
 
 
 tuples = [(), ('ram','15','8'), (), ('laxman', 'sita'),
@@ -227,7 +205,7 @@ tuples = [(), ('ram','15','8'), (), ('laxman', 'sita'),
 
 
 rs = filter(lambda t:t, tuples)
-print(list(rs))  
+print(list(rs))
 
 
 def comulative(data):
@@ -237,7 +215,7 @@ def comulative(data):
 
     return sum_list[1:]
 
-print(comulative([10,20,30,40,50])) 
+print(comulative([10,20,30,40,50]))
 
 
 data = [6,3,2,5,4,7,9]
@@ -278,7 +256,7 @@ def solution(data):
 
     return ls
 
-print(solution(data))  
+print(solution(data))
 
 
 # Algorithm KMP
@@ -324,7 +302,7 @@ while i < n:
 if i == n and j != m:
     print("face found ")
 
-# Derivetaing math function with class
+#Derivetaing math function with class
 
 import math
 
@@ -337,15 +315,19 @@ class Derivete:
         return (self.__fn(x+dx)-self.__fn(x))/dx
 
 
-@Derivete
+#@Derivete
 def def_sin(x):
     return math.sin(x)
 
+#@Derivete
+def def_tan(x):
+    return math.tan(x)
+
 
 p = def_sin(math.pi/4)
+p1 = def_tan(math.pi/3)
 print(p)
-
-
+print(p1)
 
 
 

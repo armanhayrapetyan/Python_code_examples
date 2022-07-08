@@ -70,7 +70,7 @@ class Machine(Car):
     def getColor(self,color):
         return self.color
 
-    def __str__(self):
+    def __repr__(self):
         return f" { self.speed}, {self.year}, {self.color}"
  
 
@@ -94,7 +94,7 @@ for i in result:
 
 a= int(input("Enter number "))
 
-b = a if a%2 ==0 else "uneven"
+b = a if a%2 == 0 else "uneven"
 
 print(b) 
 
@@ -113,7 +113,7 @@ print(ob.__dict__ )
 
 #Pattern Singletion
 
-class Mlass:
+class Point:
     __instance = None
 
     def __new__(cls,*args,**kwargs):
@@ -131,12 +131,12 @@ class Mlass:
     def get_result(self):
         return (self.a,self.b)
 
-ob = Mlass(1,2)
-ob1 = Mlass(10, 20)
+ob = Point(1,2)
+ob1 = Point(10, 20)
 a = ob.get_result()
 b = ob.get_result()
-print(a)
-print(b) 
+print(id(a))
+print(id(b))
 
 class Mlass:
     a =0
@@ -154,10 +154,10 @@ class Mlass:
         return cls.a<= arg <=cls.b
 
 
-
 ob = Mlass(1,2)
 d = Mlass.result(ob)
-print(d) 
+print(d)
+
 
 class Person:
 
@@ -216,7 +216,9 @@ b= ob.z
 ob.m = 60
 e = ob.w
 print(e,ob.m,b,a)
-print(ob.__dict__) 
+print(ob.__dict__)
+
+
 
 class Counter:
 
@@ -300,7 +302,7 @@ c4 = c1 + c2 + c3
 print(c4.get_time())  
 
 
-class Complex():
+class Complex:
 
     def __init__(self, real, imag):
       self.real = real
@@ -407,7 +409,7 @@ class Point:
         self._y = y
 
    
-class Cords(Point):
+class Cords3D(Point):
     
     def __init__(self,x,y,z):
         super().__init__(x, y)
@@ -417,7 +419,7 @@ class Cords(Point):
         return (self._x, self._y, self._z)
 
 
-ob = Cords(1, 2, 3)
+ob = Cords3D(1, 2, 3)
 print(ob.__dict__)
 print(ob.get_result())
 
@@ -451,7 +453,7 @@ ob3 = Square(20, 20)
 g= [ob,ob1,ob2,ob3]
 
 for i in g:
-    print(i.get_result(),end=" ") 
+    print(i.get_result(),end=" ")
 
 
 
@@ -467,22 +469,25 @@ class Point:
 
 
 class  Cords:
-    ID = 0  
-    def __init__(self):
+    ID = 0
+    def __init__(self,m):
         self.ID +=1
         self.id = self.ID
 
     def get_cords(self):
-        return f"{self.id} point is a Cords class" 
-    
+        return f"{self.id} point is a Cords class"
+
 class Args(Point,Cords):
     pass
 
 
 ob = Args(1, 2)
+ob1 = Args(3,4)
 print(ob.get_result())
 print(ob.get_cords())
-
+print(ob.get_cords())
+print(ob.get_cords())
+print(ob.get_cords())
 
 
 import functools

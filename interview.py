@@ -23,7 +23,7 @@ data1 = [[15,25],[30,51],[60,78],[100,120]]
 
 #dc = dict(data1)
 dc = {min(data1[i]):max(data1[i]) for i in range(0,len(data1)) }
-print(dc)
+#print(dc)
 target = 20
 
 def funkc(data,data1,target):
@@ -36,9 +36,7 @@ def funkc(data,data1,target):
 #print(funkc(data,data1,target))
 
 
-
 string = "abczabebiefcq"
-
 
 def get_firs_chars(string):
     dc = {i:string.count(i) for i in string}
