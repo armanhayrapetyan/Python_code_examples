@@ -24,7 +24,6 @@ if __name__ == '__main__':
     department = Department('ENG', student)
     print(department.student_registration())
 
-#Composition is relationship
 
 class Student:
 

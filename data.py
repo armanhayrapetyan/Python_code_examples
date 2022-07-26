@@ -38,10 +38,8 @@ def binary_serch(arr,x):
         mid  = (high+low) // 2
         if arr[mid] > x:
             high = mid-1
-
         elif arr[mid] < x:
             low = mid+1
-
         else:
             return f"Searchable number {arr[mid]} his index {mid}"
 

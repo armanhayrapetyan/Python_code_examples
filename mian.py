@@ -2,12 +2,12 @@ def Funkc(arr,pop):
     result = [arr[i]*pop for i in range(len(arr)) if arr[i]%2==0]
     print(result)
 
-Funkc([9,8,7,6,5,4,3,2,1],9) 
+Funkc([9,8,7,6,5,4,3,2,1],9)
 
 
 result = map(lambda a,b:a+b, [6,9,8,53,9,6,6],[9,7,6,5,4,1,2])
 
-print(list(result)) 
+print(list(result))
 
 
 def Main(a):
@@ -16,7 +16,7 @@ def Main(a):
 
 result = filter(Main, [9,6,5,4,7,3,2])
 
-print(list(result)) 
+print(list(result))
 
 import functools
 
@@ -39,7 +39,7 @@ class Car(ABC):
     def __init__(self, speed,year):
         self.speed = speed
         self.year = year
-    
+
     @abstractmethod
     def speed(self,speed):
         pass
@@ -65,14 +65,14 @@ class Machine(Car):
 
     def year(self,year):
         return self.year
-      
+
 
     def getColor(self,color):
         return self.color
 
     def __repr__(self):
         return f" { self.speed}, {self.year}, {self.color}"
- 
+
 
 myCar = Machine("100","2021","Green")
 myCar1 = Machine("250","2022","Red")
@@ -89,14 +89,14 @@ data1 = [9,3,5,4,7,8,9]
 result = zip(data,data1)
 for i in result:
 
-    print(i,end=',') 
+    print(i,end=',')
 
 
 a= int(input("Enter number "))
 
 b = a if a%2 == 0 else "uneven"
 
-print(b) 
+print(b)
 
 class Mlass:
 
@@ -105,11 +105,11 @@ class Mlass:
         self.y = y
 
     def __del__(self):
-        print("Addres object " + str(self))
+        print("Deleted Addres object " + str(self))
 
 
 ob = Mlass(12,20)
-print(ob.__dict__ ) 
+print(ob.__dict__ )
 
 #Pattern Singletion
 
@@ -119,7 +119,7 @@ class Point:
     def __new__(cls,*args,**kwargs):
         if cls.__instance is None:
             cls.__instance = super().__new__(cls)
-        
+
         return cls.__instance
 
 
@@ -141,11 +141,11 @@ print(id(b))
 class Mlass:
     a =0
     b= 100
-    
+
     def __init__(self,x,y):
         self.x = x
         self.y = y
-    
+
     def result(self):
         return self.x,self.y
 
@@ -181,14 +181,14 @@ class Person:
 ob = Person("Arman", 20)
 ob.old = 22
 del ob.old
-print(ob.__dict__) 
+print(ob.__dict__)
 
 
 class Person:
     num = 10
     def __init__(self,name,old):
         self.name = name
-        self.old = old 
+        self.old = old
 
     @classmethod
     def get_result(cls):
@@ -203,7 +203,7 @@ class Person:
     def __setattr__(self, key, value):
         if key == "d":
             return AttributeError("This letters has no created method")
-        else: 
+        else:
             self.__dict__[key] = value
 
     def __getattr__(self,item):
@@ -237,39 +237,25 @@ b= c(10)
 print(a,b)
 
 
-class Person:
-
-    def __init__(self,name,lastname):
-        self.name = name
-        self.lastname = lastname
-
-    def __str__(self):
-        return f"{self.name} {self.lastname} "
-
-
-ob= Person("Arman","Hayrapetyan")
-print(ob) 
-
-
 class Cords:
 
     def __init__(self,*args):
         self.__coords = args
 
     def __len__(self):
-        return len(self.__coords) 
+        return len(self.__coords)
 
     def __abs__(self):
         return list(map(abs, self.__coords))
 
 p = Cords(1,-2,9)
 print(len(p))
-print(abs(p)) 
+print(abs(p))
 
 
 class Clock:
-    __DAY = 86400  
- 
+    __DAY = 86400
+
     def __init__(self, seconds: int):
         if not isinstance(seconds, int):
             raise TypeError("Seconds must be int")
@@ -277,11 +263,11 @@ class Clock:
 
 
     def get_time(self):
-        s = self.seconds % 60   #seconds     
+        s = self.seconds % 60   #seconds
         m = (self.seconds // 60) % 60   #minutes
         h = (self.seconds // 3600) % 24  #clocks
         return f"{self.__get_formatted(h)}:{self.__get_formatted(m)}:{self.__get_formatted(s)}"
- 
+
     @classmethod
     def __get_formatted(cls, x):
         return str(x).rjust(2, "0")
@@ -290,16 +276,16 @@ class Clock:
     def __add__(self, other):
         if not isinstance(other, (int, Clock)):
             raise ArithmeticError("First operand must be int or Clock   ")
- 
+
         sc = other if isinstance(other, int) else other.seconds
-        return Clock(self.seconds + sc)  
+        return Clock(self.seconds + sc)
 
 
 c1 = Clock(1000)
 c2 = Clock(2000)
 c3 = Clock(3000)
-c4 = c1 + c2 + c3  
-print(c4.get_time())  
+c4 = c1 + c2 + c3
+print(c4.get_time())
 
 
 class Complex:
@@ -313,11 +299,11 @@ class Complex:
 
         real = self.real + other.real
         imag = self.imag + other.imag
-      
+
         return Complex(real, imag)
 
     def display(self):
-       
+
         print(str(self.real) + " + " + str(self.imag) + "i")
 
 
@@ -325,7 +311,7 @@ a = Complex(10, 5)
 b = Complex(5, 10)
 c = Complex(4, 2)
 d = a + b + c
-d.display() 
+d.display()
 
 
 
@@ -354,7 +340,7 @@ class Mlass:
         self.num  = num
 
     def __add__(self,other):
-        
+
         num = self.num + other.num
         return Mlass(num)
 
@@ -364,7 +350,7 @@ class Mlass:
 ob = Mlass(2)
 ob2 = Mlass(6)
 ob3 = Mlass(8)
-print(ob+ob2+ob3) 
+print(ob+ob2+ob3)
 
 
 class Student:
@@ -382,24 +368,24 @@ class Student:
     def __setitem__(self,key,value):
         if not isinstance(key,int):
             raise TypeError("Key must been int and big 0")
-        
+
         if key >= len(self.marks):
             off = key + 1 - len(self.marks)
             self.marks.extend([None]*off)
- 
+
         self.marks[key] =  value
 
     def __delitem__(self,item):
         if not isinstance(item,int):
             raise TypeError("Key must been int and big 0")
-        
+
         del self.marks[item]
-    
+
 
 ob = Student("Arman", [5,5,5,4,10,3])
 ob[10] = 7
 del ob[4]
-print(ob.marks) 
+print(ob.marks)
 
 
 class Point:
@@ -408,9 +394,9 @@ class Point:
         self._x = x
         self._y = y
 
-   
+
 class Cords3D(Point):
-    
+
     def __init__(self,x,y,z):
         super().__init__(x, y)
         self._z = z
@@ -435,7 +421,7 @@ class Rectengle:
 
 
 class Square(Rectengle):
-    
+
     def __init__(self,w,h):
         super().__init__(w,h)
 
@@ -498,6 +484,9 @@ data.sort(reverse=True)
 sub = functools.reduce(lambda a,b: a-b, data)
 
 print(sub)
+
+
+
 
 
 

@@ -106,5 +106,3 @@ a = split_and_merge_list(a)
 
 
 
-
-
